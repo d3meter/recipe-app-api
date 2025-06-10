@@ -40,18 +40,21 @@ This project is a RESTful API for managing recipes, built with Django and Django
    ```
 
 2. Build and start the containers:
-
    ```bash
-   docker-compose up
+   docker compose build
    ```
 
-3. Apply migrations and create a superuser:
-
    ```bash
-   docker-compose run app sh -c "python manage.py migrate && python manage.py createsuperuser"
+   docker compose up
    ```
 
-4. Access the API at:
+4. Apply migrations and create a superuser:
+
+   ```bash
+   docker compose run app sh -c "python manage.py migrate && python manage.py createsuperuser"
+   ```
+
+5. Access the API at:
    `http://localhost:8000/api/`
 
 ## API Documentation
@@ -68,7 +71,7 @@ To access the Django admin panel:
 1. Create a superuser (if not done yet):
 
    ```bash
-   docker-compose run app sh -c "python manage.py createsuperuser"
+   docker compose run app sh -c "python manage.py createsuperuser"
    ```
 
 2. Visit: [http://localhost:8000/admin/](http://localhost:8000/admin/)
@@ -78,5 +81,5 @@ To access the Django admin panel:
 Run the test suite with:
 
 ```bash
-docker-compose run app sh -c "pytest"
+docker compose run app sh -c "pytest"
 ```
